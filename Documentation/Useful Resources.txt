@@ -1,0 +1,5 @@
+//Instructions and Documentation for CakePHP Bootstrap plugin
+https://github.com/FriendsOfCake/bootstrap-ui
+
+//Emmet plugin for Sublime Text info (plugin for syntax and stuff)
+http://docs.emmet.io/

@@ -1,0 +1,42 @@
+//return a file from the controller (used to return images for recipes)
+public function sendImage($image_name = null)
+{
+	$this->response->file('images' . DS . $image_name);
+	return $this->response;
+}
+
+
+//do not render the default layout
+public function add()
+{
+	$this->viewBuilder()->layout(false);
+
+	$recipe = $this->Recipes->newEntity();
+	if ($this->request->is('post')) {
+		$recipe = $this->Recipes->patchEntity($recipe, $this->request->data);
+		if ($this->Recipes->save($recipe)) {
+			$this->Flash->success(__('The recipe has been saved.'));
+			return $this->redirect(['action' => 'index']);
+		} else {
+			$this->Flash->error(__('The recipe could not be saved. Please, try again.'));
+		}
+	}
+	$users = $this->Recipes->Users->find('list', ['limit' => 200]);
+	$this->set(compact('recipe', 'users'));
+	$this->set('_serialize', ['recipe']);
+}
+
+
+//for when assets are served from a different domain, this will configure the whitelist inorder to allow //angular to fetch and render the html
+var recipesModule = angular.module('recipesModule', []).config(function($sceDelegateProvider) {
+	$sceDelegateProvider.resourceUrlWhitelist([
+		// Allow same origin resource loads.
+		'self',
+		// Allow loading from our assets domain.  Notice the difference between * and **.
+		'http://localhost/MenuList/**'
+	]);
+});
+
+//Allow extensions to be used (eg. append .json or .xml to request URL so CakePHP will return proper //response)
+//Must be first in order for every route below to accept extensions (.json and .xml appended to URL)
+$routes->extensions(['json', 'xml']);
