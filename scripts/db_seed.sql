@@ -133,7 +133,25 @@ INSERT INTO recipes(name, user_id, description, num_served)  #id = 5
             VALUES('shepard''s pie', 1, 'A childhood classic!', 4);
 
 INSERT INTO recipes(name, user_id, description, num_served)  #id = 6
-            VALUES('shepard''s pie', 1, 'A childhood classic!', 4);          
+            VALUES('shepard''s pie', 1, 'A childhood classic!', 4);        
+
+INSERT INTO recipes(name, user_id, description, num_served)  #id = 7
+VALUES('shepard''s pie', 1, 'A childhood classic!', 4); 
+
+INSERT INTO recipes(name, user_id, description, num_served)  #id = 8
+            VALUES('shepard''s pie', 1, 'A childhood classic!', 4);
+
+INSERT INTO recipes(name, user_id, description, num_served)  #id = 9
+            VALUES('shepard''s pie', 1, 'A childhood classic!', 4); 
+
+INSERT INTO recipes(name, user_id, description, num_served)  #id = 10
+            VALUES('shepard''s pie', 1, 'A childhood classic!', 4); 
+
+INSERT INTO recipes(name, user_id, description, num_served)  #id = 11
+            VALUES('shepard''s pie', 1, 'A childhood classic!', 4);
+
+INSERT INTO recipes(name, user_id, description, num_served)  #id = 12
+            VALUES('shepard''s pie', 1, 'A childhood classic!', 4);     
            
            
                 

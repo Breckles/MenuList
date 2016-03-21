@@ -56,7 +56,7 @@ CREATE TABLE recipes(
      description TEXT                                                     ,
     instructions TEXT                                                     ,
       num_served INT                                  NOT NULL            ,
-         private BOOLEAN                    DEFAULT 0 NOT NULL            ,
+         private BOOLEAN                    DEFAULT 1 NOT NULL            ,
            image VARCHAR(100)  DEFAULT 'no_image.jpg'                     ,
          created DATETIME                                                 ,
         modified DATETIME                                                 ,

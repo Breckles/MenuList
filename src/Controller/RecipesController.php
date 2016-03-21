@@ -18,10 +18,12 @@ class RecipesController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Users']
-        ];
-        $recipes = $this->paginate($this->Recipes);
+        // $this->paginate = [
+        //     'contain' => ['Users']
+        // ];
+        // $recipes = $this->paginate($this->Recipes);
+
+        $recipes = $this->Recipes->find('all')->all();
 
         $this->set(compact('recipes'));
         $this->set('_serialize', ['recipes']);
@@ -52,7 +54,7 @@ class RecipesController extends AppController
     public function add()
     {
         $this->viewBuilder()->layout(false);
-        
+
         $recipe = $this->Recipes->newEntity();
         if ($this->request->is('post')) {
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->data);
