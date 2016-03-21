@@ -13,6 +13,7 @@ use Cake\ORM\Entity;
  * @property string $description
  * @property string $instructions
  * @property int $num_served
+ * @property bool $private
  * @property string $image
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified

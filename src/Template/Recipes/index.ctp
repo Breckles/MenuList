@@ -19,9 +19,9 @@
                 <th><?= $this->Paginator->sort('user_id') ?></th>
                 <th><?= $this->Paginator->sort('name') ?></th>
                 <th><?= $this->Paginator->sort('num_served') ?></th>
+                <th><?= $this->Paginator->sort('private') ?></th>
                 <th><?= $this->Paginator->sort('image') ?></th>
                 <th><?= $this->Paginator->sort('created') ?></th>
-                <th><?= $this->Paginator->sort('modified') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -32,9 +32,9 @@
                 <td><?= $recipe->has('user') ? $this->Html->link($recipe->user->id, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?></td>
                 <td><?= h($recipe->name) ?></td>
                 <td><?= $this->Number->format($recipe->num_served) ?></td>
+                <td><?= h($recipe->private) ?></td>
                 <td><?= h($recipe->image) ?></td>
                 <td><?= h($recipe->created) ?></td>
-                <td><?= h($recipe->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $recipe->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $recipe->id]) ?>

@@ -44,6 +44,10 @@
             <th><?= __('Modified') ?></th>
             <td><?= h($recipe->modified) ?></td>
         </tr>
+        <tr>
+            <th><?= __('Private') ?></th>
+            <td><?= $recipe->private ? __('Yes') : __('No'); ?></td>
+        </tr>
     </table>
     <div class="row">
         <h4><?= __('Description') ?></h4>

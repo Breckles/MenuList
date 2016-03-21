@@ -73,6 +73,11 @@ class RecipesTable extends Table
             ->notEmpty('num_served');
 
         $validator
+            ->boolean('private')
+            ->requirePresence('private', 'create')
+            ->notEmpty('private');
+
+        $validator
             ->allowEmpty('image');
 
         return $validator;

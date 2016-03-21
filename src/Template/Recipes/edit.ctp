@@ -26,6 +26,7 @@
             echo $this->Form->input('description');
             echo $this->Form->input('instructions');
             echo $this->Form->input('num_served');
+            echo $this->Form->input('private');
             echo $this->Form->input('image');
         ?>
     </fieldset>

@@ -40,7 +40,7 @@ CREATE TABLE uoms(
 
 CREATE TABLE ingredients(
                 id INT           AUTO_INCREMENT PRIMARY KEY       ,
-              name VARCHAR(75)                 NOT NULL           ,
+              name VARCHAR(75)                  NOT NULL          ,
        category_id INT                          NOT NULL          ,
            created DATETIME                                       ,
           modified DATETIME                                       ,
@@ -56,6 +56,7 @@ CREATE TABLE recipes(
      description TEXT                                                     ,
     instructions TEXT                                                     ,
       num_served INT                                  NOT NULL            ,
+         private BOOLEAN                    DEFAULT 0 NOT NULL            ,
            image VARCHAR(100)  DEFAULT 'no_image.jpg'                     ,
          created DATETIME                                                 ,
         modified DATETIME                                                 ,
