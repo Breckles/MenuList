@@ -51,6 +51,8 @@ class RecipeIngredientsController extends AppController
      */
     public function add()
     {
+        $this->viewBuilder()->layout(false);
+        
         $recipeIngredient = $this->RecipeIngredients->newEntity();
         if ($this->request->is('post')) {
             $recipeIngredient = $this->RecipeIngredients->patchEntity($recipeIngredient, $this->request->data);

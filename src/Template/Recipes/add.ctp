@@ -11,8 +11,8 @@
     </ul>
 </nav> -->
 <div class="recipes form large-9 medium-8 columns content createForm">
-    <?= $this->Flash->render() ?>
-    <?= $this->Form->create($recipe, ['url' => false, 'ng-submit' => 'submit()']) ?>
+    <!-- <?= $this->Flash->render() ?> -->
+    <?= $this->Form->create($recipe, ['url' => false]) ?>
     <fieldset>
         <legend><?= __('Add Recipe') ?></legend>
         <?php
@@ -25,9 +25,9 @@
             echo $this->Form->input('private', ['ng-model' => 'newRecipe.private']);            
         ?>
     </fieldset>
-    <div class="modal-footer">
-        <button class="btn btn-primary" type="submit">Submit</button>
+    <!-- <div class="modal-footer">
+        <button class="btn btn-primary" type="submit" ng-click="submit()">Submit</button>
         <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-    </div>    
+    </div>  -->   
     <?= $this->Form->end() ?>
 </div>
