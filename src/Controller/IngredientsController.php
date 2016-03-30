@@ -42,16 +42,6 @@ class IngredientsController extends AppController
 
         $this->set('ingredient', $ingredient);
         $this->set('_serialize', ['ingredient']);
-
-        // $ingredient = $this->Ingredients->get($id, [
-        //     'contain' => ['Categories' => [], 'RecipeIngredients']
-        // ]);
-
-        // $this->set('ingredient', $ingredient);
-        // $this->set('_serialize', ['ingredient']);
-
-        // $this->set('ingredient', $ingredient);
-        // $this->set('_serialize', ['ingredient']);
     }
 
     /**

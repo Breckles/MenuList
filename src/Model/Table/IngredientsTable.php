@@ -57,6 +57,9 @@ class IngredientsTable extends Table
             ->requirePresence('name', 'create')
             ->notEmpty('name');
 
+        $validator
+            ->allowEmpty('information');
+
         return $validator;
     }
 

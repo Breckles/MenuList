@@ -42,6 +42,7 @@ CREATE TABLE ingredients(
                 id INT           AUTO_INCREMENT PRIMARY KEY       ,
               name VARCHAR(75)                  NOT NULL          ,
        category_id INT                          NOT NULL          ,
+       information TEXT                                           ,
            created DATETIME                                       ,
           modified DATETIME                                       ,
 

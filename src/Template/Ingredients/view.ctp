@@ -35,6 +35,10 @@
             <td><?= h($ingredient->modified) ?></td>
         </tr>
     </table>
+    <div class="row">
+        <h4><?= __('Information') ?></h4>
+        <?= $this->Text->autoParagraph(h($ingredient->information)); ?>
+    </div>
     <div class="related">
         <h4><?= __('Related Recipe Ingredients') ?></h4>
         <?php if (!empty($ingredient->recipe_ingredients)): ?>

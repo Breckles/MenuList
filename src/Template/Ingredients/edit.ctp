@@ -21,6 +21,7 @@
         <?php
             echo $this->Form->input('name');
             echo $this->Form->input('category_id', ['options' => $categories]);
+            echo $this->Form->input('information');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
