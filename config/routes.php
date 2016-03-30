@@ -48,6 +48,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->extensions(['json', 'xml']);
 
     $routes->connect('/recipes/image/*', ['controller' => 'Recipes', 'action' => 'sendImage']);
+    $routes->connect('/ingredients/image/*', ['controller' => 'Ingredients', 'action' => 'sendImage']);
     
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',

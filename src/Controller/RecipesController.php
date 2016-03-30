@@ -166,7 +166,7 @@ class RecipesController extends AppController
 
     public function sendImage($image_name = null)
     {
-        $this->response->file('images' . DS . $image_name);
+        $this->response->file('images' . DS . 'recipes' . DS . $image_name);
         return $this->response;
     }
 }

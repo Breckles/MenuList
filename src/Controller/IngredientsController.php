@@ -110,4 +110,10 @@ class IngredientsController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
+
+    public function sendImage($image_name = null)
+    {
+        $this->response->file('images' . DS . $image_name);
+        return $this->response;
+    }
 }
