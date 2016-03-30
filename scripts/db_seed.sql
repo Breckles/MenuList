@@ -58,13 +58,13 @@ INSERT INTO uoms(name, description)  #id = 6
          VALUES('L', 'litres');
          
 INSERT INTO uoms(name, description)  #id = 7
-         VALUES('SU', 'small unit');
+         VALUES('small', 'small unit');
          
 INSERT INTO uoms(name, description)  #id = 8
-         VALUES('MU', 'medium unit');
+         VALUES('medium', 'medium unit');
          
 INSERT INTO uoms(name, description)  #id = 9
-         VALUES('LU', 'large unit'); 
+         VALUES('large', 'large unit'); 
          
 INSERT INTO uoms(name, description)  #id = 10
          VALUES('gal', 'gallon');  

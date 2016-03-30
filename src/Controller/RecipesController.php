@@ -51,11 +51,26 @@ class RecipesController extends AppController
     public function view($id = null)
     {
         $recipe = $this->Recipes->get($id, [
-            'contain' => ['Users', 'RecipeIngredients', 'ScheduledMeals']
+            'contain' => [
+                'Users',
+                'RecipeIngredients',
+                'RecipeIngredients.Uoms',
+                'RecipeIngredients.Ingredients'
+            ]
         ]);
+
 
         $this->set('recipe', $recipe);
         $this->set('_serialize', ['recipe']);
+
+
+        // //original code
+        //  $recipe = $this->Recipes->get($id, [
+        //     'contain' => ['Users', 'RecipeIngredients', 'ScheduledMeals']
+        // ]);
+
+        // $this->set('recipe', $recipe);
+        // $this->set('_serialize', ['recipe']);
     }
 
     /**
@@ -70,20 +85,6 @@ class RecipesController extends AppController
         $recipe = $this->Recipes->newEntity($this->request->data());//may not be necessary to pass the data to newEntity, since patchEntity takes it in
 
         if ($this->request->is('post')) {
-            // $recipeData = $this->request->data;
-            //the recipe data contains an array of ingredients for the recipe. We need to separate the recipe from its ingredients
-            // $recipeData = [
-            //     "user_id" => 1, //for convenience until I implement users
-            //     "name" => $this->request->data('name'),
-            //     "description" => $this->request->data('description'),
-            //     "instructions" => $this->request->data('instructions'),
-            //     "num_served" => $this->request->data('num_served'),
-            //     "image" => $this->request->data('image'),
-            //     "private" => $this->request->data('private')
-            // ];
-
-            // $recipeIngredients = $this->request->data('ingredients');
-
             //patch the Recipe entity and make sure the RecipeIngredients associations (contained in $this->request->data('recipe_ingredients')) are added as well
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->data(), [
                 'associated' => ['RecipeIngredients']
@@ -94,25 +95,6 @@ class RecipesController extends AppController
             } else {
                 $this->Flash->error(__('The recipe could not be saved. Please, try again.'));
             }
-
-
-
-           
-
-            // $recipe = $this->Recipes->patchEntity($recipe, $recipeData);
-            // if ($this->Recipes->save($recipe)) {
-            //     //assign the id of the new recipe to each ingredient
-            //     for($i = 0; $i < count($recipeIngredients); $i++)
-            //     {
-            //         // $toChange = $recipeIngredients[$i];
-            //         // $toChange->recipe_id = $this->Recipes->id;
-            //         $recipeIngredients[$i]->recipe_id = $this->Recipes->id;
-            //     }
-
-            //     $recipeIngredientsController->add($recipeIngredients);
-            // } else {
-            //     $this->Flash->error(__('The recipe could not be saved. Please, try again.'));
-            // }
         }
         $users = $this->Recipes->Users->find('list', ['limit' => 200]);
         $this->set(compact('recipe', 'users'));
