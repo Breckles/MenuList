@@ -43,6 +43,7 @@ CREATE TABLE ingredients(
               name VARCHAR(75)                  NOT NULL          ,
        category_id INT                          NOT NULL          ,
        information TEXT                                           ,
+             image VARCHAR(100)  DEFAULT 'no_image.jpg'           ,
            created DATETIME                                       ,
           modified DATETIME                                       ,
 

@@ -16,6 +16,7 @@
                 <th><?= $this->Paginator->sort('id') ?></th>
                 <th><?= $this->Paginator->sort('name') ?></th>
                 <th><?= $this->Paginator->sort('category_id') ?></th>
+                <th><?= $this->Paginator->sort('image') ?></th>
                 <th><?= $this->Paginator->sort('created') ?></th>
                 <th><?= $this->Paginator->sort('modified') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
@@ -27,6 +28,7 @@
                 <td><?= $this->Number->format($ingredient->id) ?></td>
                 <td><?= h($ingredient->name) ?></td>
                 <td><?= $ingredient->has('category') ? $this->Html->link($ingredient->category->id, ['controller' => 'Categories', 'action' => 'view', $ingredient->category->id]) : '' ?></td>
+                <td><?= h($ingredient->image) ?></td>
                 <td><?= h($ingredient->created) ?></td>
                 <td><?= h($ingredient->modified) ?></td>
                 <td class="actions">

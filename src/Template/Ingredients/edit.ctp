@@ -22,6 +22,7 @@
             echo $this->Form->input('name');
             echo $this->Form->input('category_id', ['options' => $categories]);
             echo $this->Form->input('information');
+            echo $this->Form->input('image');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

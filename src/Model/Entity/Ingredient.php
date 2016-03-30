@@ -11,6 +11,7 @@ use Cake\ORM\Entity;
  * @property int $category_id
  * @property \App\Model\Entity\Category $category
  * @property string $information
+ * @property string $image
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  * @property \App\Model\Entity\RecipeIngredient[] $recipe_ingredients

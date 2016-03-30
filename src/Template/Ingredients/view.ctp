@@ -23,6 +23,10 @@
             <td><?= $ingredient->has('category') ? $this->Html->link($ingredient->category->id, ['controller' => 'Categories', 'action' => 'view', $ingredient->category->id]) : '' ?></td>
         </tr>
         <tr>
+            <th><?= __('Image') ?></th>
+            <td><?= h($ingredient->image) ?></td>
+        </tr>
+        <tr>
             <th><?= __('Id') ?></th>
             <td><?= $this->Number->format($ingredient->id) ?></td>
         </tr>

@@ -60,6 +60,9 @@ class IngredientsTable extends Table
         $validator
             ->allowEmpty('information');
 
+        $validator
+            ->allowEmpty('image');
+
         return $validator;
     }
 
