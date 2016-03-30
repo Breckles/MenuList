@@ -17,7 +17,7 @@
     <fieldset>
         <legend><?= __('Edit Uom') ?></legend>
         <?php
-            echo $this->Form->input('uom');
+            echo $this->Form->input('name');
             echo $this->Form->input('description');
         ?>
     </fieldset>

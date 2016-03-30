@@ -25,7 +25,13 @@ class UomsTableTest extends TestCase
      */
     public $fixtures = [
         'app.uoms',
-        'app.recipe_ingredients'
+        'app.recipe_ingredients',
+        'app.recipes',
+        'app.users',
+        'app.weekly_menus',
+        'app.scheduled_meals',
+        'app.ingredients',
+        'app.categories'
     ];
 
     /**

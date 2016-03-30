@@ -20,8 +20,8 @@
                 <th><?= $this->Paginator->sort('ingredient_id') ?></th>
                 <th><?= $this->Paginator->sort('quantity') ?></th>
                 <th><?= $this->Paginator->sort('uom_id') ?></th>
-                <th><?= $this->Paginator->sort('instructions') ?></th>
                 <th><?= $this->Paginator->sort('created') ?></th>
+                <th><?= $this->Paginator->sort('modified') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -33,8 +33,8 @@
                 <td><?= $recipeIngredient->has('ingredient') ? $this->Html->link($recipeIngredient->ingredient->name, ['controller' => 'Ingredients', 'action' => 'view', $recipeIngredient->ingredient->id]) : '' ?></td>
                 <td><?= $this->Number->format($recipeIngredient->quantity) ?></td>
                 <td><?= $recipeIngredient->has('uom') ? $this->Html->link($recipeIngredient->uom->id, ['controller' => 'Uoms', 'action' => 'view', $recipeIngredient->uom->id]) : '' ?></td>
-                <td><?= h($recipeIngredient->instructions) ?></td>
                 <td><?= h($recipeIngredient->created) ?></td>
+                <td><?= h($recipeIngredient->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $recipeIngredient->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $recipeIngredient->id]) ?>

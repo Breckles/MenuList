@@ -36,4 +36,13 @@ class Recipe extends Entity
         '*' => true,
         'id' => false,
     ];
+
+
+    public function addTestHeader($response)
+    {
+        $response->header('Test', 'It works!!!');
+        return $response;
+    }
+
+
 }

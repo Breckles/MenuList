@@ -49,25 +49,28 @@ class RecipeIngredientsController extends AppController
      *
      * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($data)
     {
-        $this->viewBuilder()->layout(false);
+        $this->RecipeIngredients->saveAll($data);
         
-        $recipeIngredient = $this->RecipeIngredients->newEntity();
-        if ($this->request->is('post')) {
-            $recipeIngredient = $this->RecipeIngredients->patchEntity($recipeIngredient, $this->request->data);
-            if ($this->RecipeIngredients->save($recipeIngredient)) {
-                $this->Flash->success(__('The recipe ingredient has been saved.'));
-                return $this->redirect(['action' => 'index']);
-            } else {
-                $this->Flash->error(__('The recipe ingredient could not be saved. Please, try again.'));
-            }
-        }
-        $recipes = $this->RecipeIngredients->Recipes->find('list', ['limit' => 200]);
-        $ingredients = $this->RecipeIngredients->Ingredients->find('list', ['limit' => 200]);
-        $uoms = $this->RecipeIngredients->Uoms->find('list', ['limit' => 200]);
-        $this->set(compact('recipeIngredient', 'recipes', 'ingredients', 'uoms'));
-        $this->set('_serialize', ['recipeIngredient']);
+
+        // $this->viewBuilder()->layout(false);
+
+        // $recipeIngredient = $this->RecipeIngredients->newEntity();
+        // if ($this->request->is('post')) {
+        //     $recipeIngredient = $this->RecipeIngredients->patchEntity($recipeIngredient, $this->request->data);
+        //     if ($this->RecipeIngredients->save($recipeIngredient)) {
+        //         $this->Flash->success(__('The recipe ingredient has been saved.'));
+        //         return $this->redirect(['action' => 'index']);
+        //     } else {
+        //         $this->Flash->error(__('The recipe ingredient could not be saved. Please, try again.'));
+        //     }
+        // }
+        // $recipes = $this->RecipeIngredients->Recipes->find('list', ['limit' => 200]);
+        // $ingredients = $this->RecipeIngredients->Ingredients->find('list', ['limit' => 200]);
+        // $uoms = $this->RecipeIngredients->Uoms->find('list', ['limit' => 200]);
+        // $this->set(compact('recipeIngredient', 'recipes', 'ingredients', 'uoms'));
+        // $this->set('_serialize', ['recipeIngredient']);
     }
 
     /**

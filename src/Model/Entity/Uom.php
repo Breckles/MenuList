@@ -7,7 +7,7 @@ use Cake\ORM\Entity;
  * Uom Entity.
  *
  * @property int $id
- * @property string $uom
+ * @property string $name
  * @property string $description
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified

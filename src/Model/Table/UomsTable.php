@@ -26,7 +26,7 @@ class UomsTable extends Table
         parent::initialize($config);
 
         $this->table('uoms');
-        $this->displayField('id');
+        $this->displayField('name');
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
@@ -49,8 +49,8 @@ class UomsTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->requirePresence('uom', 'create')
-            ->notEmpty('uom');
+            ->requirePresence('name', 'create')
+            ->notEmpty('name');
 
         $validator
             ->requirePresence('description', 'create')

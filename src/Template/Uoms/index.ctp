@@ -12,7 +12,7 @@
         <thead>
             <tr>
                 <th><?= $this->Paginator->sort('id') ?></th>
-                <th><?= $this->Paginator->sort('uom') ?></th>
+                <th><?= $this->Paginator->sort('name') ?></th>
                 <th><?= $this->Paginator->sort('description') ?></th>
                 <th><?= $this->Paginator->sort('created') ?></th>
                 <th><?= $this->Paginator->sort('modified') ?></th>
@@ -23,7 +23,7 @@
             <?php foreach ($uoms as $uom): ?>
             <tr>
                 <td><?= $this->Number->format($uom->id) ?></td>
-                <td><?= h($uom->uom) ?></td>
+                <td><?= h($uom->name) ?></td>
                 <td><?= h($uom->description) ?></td>
                 <td><?= h($uom->created) ?></td>
                 <td><?= h($uom->modified) ?></td>

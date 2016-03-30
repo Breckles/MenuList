@@ -1,16 +1,17 @@
-
-<div class="recipeIngredients form large-9 medium-8 columns content createForm">
-    <?= $this->Form->create($recipeIngredient, ['url' => false]) ?>
+<div class="recipeIngredients form large-9 medium-8 columns content">
+    <?= $this->Form->create($recipeIngredient, ['url' => false, 'ng-submit' => 'addRecipeIngredient()']) ?>
     <fieldset>
         <legend><?= __('Add Recipe Ingredient') ?></legend>
         <?php
             // echo $this->Form->input('recipe_id', ['options' => $recipes]);
-            echo $this->Form->input('ingredient_id', ['options' => $ingredients]);
-            echo $this->Form->input('quantity', ['ng-model' => 'recipeIngrdient.quantity']);
-            echo $this->Form->input('uom_id', ['options' => $uoms]);
-            echo $this->Form->input('instructions');
+            echo $this->Form->input('ingredient_id', ['options' => $ingredients, 'ng-model' => 'newRecipeIngredient.ingredient_id', 'class' => 'required']);
+            echo $this->Form->input('quantity', ['min' => 1, 'ng-model' => 'newRecipeIngredient.quantity']);
+            echo $this->Form->input('uom_id', ['options' => $uoms, 'ng-model' => 'newRecipeIngredient.uom_id']);
+            echo $this->Form->input('instructions', ['ng-model' => 'newRecipeIngredient.instructions']);
         ?>
     </fieldset>
-    <!-- <?= $this->Form->button(__('Submit')) ?> -->
+    <button type="submit" class="btn addRecipeIngredientButton">
+        Add Recipe Ingredient
+    </button>
     <?= $this->Form->end() ?>
 </div>

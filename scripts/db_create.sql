@@ -30,7 +30,7 @@ CREATE TABLE categories(
 
 CREATE TABLE uoms(
              id INT           AUTO_INCREMENT PRIMARY KEY    ,
-            uom VARCHAR(25)                 NOT NULL        ,
+           name VARCHAR(75)                 NOT NULL        ,
     description VARCHAR(75)                 NOT NULL        , 
         created DATETIME                                    ,
        modified DATETIME  
@@ -73,7 +73,7 @@ CREATE TABLE recipe_ingredients(
       ingredient_id INT                           NOT NULL          ,
            quantity INT                           NOT NULL          ,
              uom_id INT                           NOT NULL          ,
-       instructions VARCHAR(200)                                    ,
+       instructions TEXT                                            ,
             created DATETIME                                        ,
            modified DATETIME                                        ,
 

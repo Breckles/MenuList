@@ -13,8 +13,8 @@
     <h3><?= h($uom->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th><?= __('Uom') ?></th>
-            <td><?= h($uom->uom) ?></td>
+            <th><?= __('Name') ?></th>
+            <td><?= h($uom->name) ?></td>
         </tr>
         <tr>
             <th><?= __('Description') ?></th>

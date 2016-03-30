@@ -40,3 +40,7 @@ var recipesModule = angular.module('recipesModule', []).config(function($sceDele
 //Allow extensions to be used (eg. append .json or .xml to request URL so CakePHP will return proper //response)
 //Must be first in order for every route below to accept extensions (.json and .xml appended to URL)
 $routes->extensions(['json', 'xml']);
+
+
+//File input field for forms in cakephp
+echo $this->Form->input('quantity', ['type' => 'file']);

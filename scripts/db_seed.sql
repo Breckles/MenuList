@@ -39,43 +39,43 @@ INSERT INTO categories(category)  #id = 6
               
 ########  uoms seeds  ############
 
-INSERT INTO uoms(uom, description)  #id = 1
+INSERT INTO uoms(name, description)  #id = 1
          VALUES('g', 'grams');
          
-INSERT INTO uoms(uom, description)  #id = 2
+INSERT INTO uoms(name, description)  #id = 2
          VALUES('kg', 'kilograms');
          
-INSERT INTO uoms(uom, description)  #id = 3
+INSERT INTO uoms(name, description)  #id = 3
          VALUES('lbs', 'pounds');
          
-INSERT INTO uoms(uom, description)  #id = 4
+INSERT INTO uoms(name, description)  #id = 4
          VALUES('oz', 'ounces');
          
-INSERT INTO uoms(uom, description)  #id = 5
+INSERT INTO uoms(name, description)  #id = 5
          VALUES('ml', 'millilitres');
          
-INSERT INTO uoms(uom, description)  #id = 6
+INSERT INTO uoms(name, description)  #id = 6
          VALUES('L', 'litres');
          
-INSERT INTO uoms(uom, description)  #id = 7
+INSERT INTO uoms(name, description)  #id = 7
          VALUES('SU', 'small unit');
          
-INSERT INTO uoms(uom, description)  #id = 8
+INSERT INTO uoms(name, description)  #id = 8
          VALUES('MU', 'medium unit');
          
-INSERT INTO uoms(uom, description)  #id = 9
+INSERT INTO uoms(name, description)  #id = 9
          VALUES('LU', 'large unit'); 
          
-INSERT INTO uoms(uom, description)  #id = 10
+INSERT INTO uoms(name, description)  #id = 10
          VALUES('gal', 'gallon');  
          
-INSERT INTO uoms(uom, description)  #id = 11
+INSERT INTO uoms(name, description)  #id = 11
          VALUES('tsp', 'teaspoon'); 
          
-INSERT INTO uoms(uom, description)  #id = 12
+INSERT INTO uoms(name, description)  #id = 12
          VALUES('tbsp', 'tablespoon');
          
-INSERT INTO uoms(uom, description)  #id = 13
+INSERT INTO uoms(name, description)  #id = 13
          VALUES('cup', 'cup');         
               
               

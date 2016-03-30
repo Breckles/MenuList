@@ -29,10 +29,6 @@
             <td><?= $recipeIngredient->has('uom') ? $this->Html->link($recipeIngredient->uom->id, ['controller' => 'Uoms', 'action' => 'view', $recipeIngredient->uom->id]) : '' ?></td>
         </tr>
         <tr>
-            <th><?= __('Instructions') ?></th>
-            <td><?= h($recipeIngredient->instructions) ?></td>
-        </tr>
-        <tr>
             <th><?= __('Id') ?></th>
             <td><?= $this->Number->format($recipeIngredient->id) ?></td>
         </tr>
@@ -49,4 +45,8 @@
             <td><?= h($recipeIngredient->modified) ?></td>
         </tr>
     </table>
+    <div class="row">
+        <h4><?= __('Instructions') ?></h4>
+        <?= $this->Text->autoParagraph(h($recipeIngredient->instructions)); ?>
+    </div>
 </div>

@@ -32,6 +32,6 @@ class RecipeIngredient extends Entity
      */
     protected $_accessible = [
         '*' => true,
-        'id' => false,
+        // 'id' => false,
     ];
 }
