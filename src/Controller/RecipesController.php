@@ -90,6 +90,11 @@ class RecipesController extends AppController
                 'associated' => ['RecipeIngredients']
                 ]);
 
+            //If necessary, make recipe image the default 'no_image.jpg' image
+            if ($recipe->image == '') {
+                $recipe->image = 'no_image.jpg';
+            }
+
             if ($this->Recipes->save($recipe)) {
                 //need to send a message to the client to confirm everything has saved
             } else {
