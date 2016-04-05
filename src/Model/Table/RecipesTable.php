@@ -38,7 +38,8 @@ class RecipesTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->hasMany('RecipeIngredients', [
-            'foreignKey' => 'recipe_id'
+            'foreignKey' => 'recipe_id',
+            'dependent' => true //make sure recipeIngredients are deleted when a recipe is deleted
         ]);
         $this->hasMany('ScheduledMeals', [
             'foreignKey' => 'recipe_id'
