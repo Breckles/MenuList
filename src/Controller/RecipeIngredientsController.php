@@ -53,21 +53,29 @@ class RecipeIngredientsController extends AppController
     {
         $this->viewBuilder()->layout(false);
 
+        //Will hold the new list of recipeIngredients for the recipe to which an ingredient was just added 
+        $RecipeIngredients;
+
         $recipeIngredient = $this->RecipeIngredients->newEntity();
         if ($this->request->is('post')) {
             $recipeIngredient = $this->RecipeIngredients->patchEntity($recipeIngredient, $this->request->data);
             if ($this->RecipeIngredients->save($recipeIngredient)) {
                 $this->Flash->success(__('The recipe ingredient has been saved.'));
-                return $this->redirect(['action' => 'index']);
+
+                //populate new list of ingredients for the recipe that just had an ingredient added
+                $recipeIngredients = $this->RecipeIngredients->find('all')
+                ->where(['RecipeIngredients.recipe_id =' => $this->request->data['recipe_id']])
+                ->contain(['Ingredients', 'Uoms']);
+                // return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('The recipe ingredient could not be saved. Please, try again.'));
             }
         }
-        $recipes = $this->RecipeIngredients->Recipes->find('list', ['limit' => 200]);
-        $ingredients = $this->RecipeIngredients->Ingredients->find('list', ['limit' => 200]);
-        $uoms = $this->RecipeIngredients->Uoms->find('list', ['limit' => 200]);
-        $this->set(compact('recipeIngredient', 'recipes', 'ingredients', 'uoms'));
-        $this->set('_serialize', ['recipeIngredient']);
+        // $recipes = $this->RecipeIngredients->Recipes->find('list', ['limit' => 200]);
+        // $ingredients = $this->RecipeIngredients->Ingredients->find('list', ['limit' => 200]);
+        // $uoms = $this->RecipeIngredients->Uoms->find('list', ['limit' => 200]);
+        $this->set(compact('recipeIngredients'));
+        $this->set('_serialize', ['recipeIngredients']);
     }
 
     /**
@@ -143,13 +151,25 @@ class RecipeIngredientsController extends AppController
      */
     public function delete($id = null)
     {
+        //Will hold the new list of recipeIngredients for the recipe for which an ingredient was just deleted
+        $recipeIngredients;
+
         $this->request->allowMethod(['post', 'delete']);
         $recipeIngredient = $this->RecipeIngredients->get($id);
         if ($this->RecipeIngredients->delete($recipeIngredient)) {
-            $this->Flash->success(__('The recipe ingredient has been deleted.'));
+            // $this->Flash->success(__('The recipe ingredient has been deleted.'));
+
+            //populate new list of ingredients for the recipe that just had an ingredient deleted
+            $recipeIngredients = $this->RecipeIngredients->find('all')
+            ->where(['RecipeIngredients.recipe_id =' => $recipeIngredient->recipe_id])
+            ->contain(['Ingredients', 'Uoms']);
+
         } else {
             $this->Flash->error(__('The recipe ingredient could not be deleted. Please, try again.'));
         }
-        return $this->redirect(['action' => 'index']);
+        // return $this->redirect(['action' => 'index']);
+
+        $this->set(compact('recipeIngredients'));
+        $this->set('_serialize', ['recipeIngredients']);
     }
 }

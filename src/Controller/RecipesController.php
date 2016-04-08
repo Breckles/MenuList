@@ -140,12 +140,12 @@ class RecipesController extends AppController
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->data);
             if ($this->Recipes->save($recipe)) {
                 $this->Flash->success(__('The recipe has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                // return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('The recipe could not be saved. Please, try again.'));
             }
         }
-        $users = $this->Recipes->Users->find('list', ['limit' => 200]);
+        // $users = $this->Recipes->Users->find('list', ['limit' => 200]);
         $this->set(compact('recipe', 'users'));
         $this->set('_serialize', ['recipe']);
     }
