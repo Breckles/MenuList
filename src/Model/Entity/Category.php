@@ -7,7 +7,7 @@ use Cake\ORM\Entity;
  * Category Entity.
  *
  * @property int $id
- * @property string $category
+ * @property string $name
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  * @property \App\Model\Entity\Ingredient[] $ingredients

@@ -18,13 +18,21 @@ class IngredientsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Categories']
-        ];
-        $ingredients = $this->paginate($this->Ingredients);
+        $ingredients = $this->Ingredients->find('all')->contain([
+            'Categories'
+        ]);
 
         $this->set(compact('ingredients'));
         $this->set('_serialize', ['ingredients']);
+
+
+        // $this->paginate = [
+        //     'contain' => ['Categories']
+        // ];
+        // $ingredients = $this->paginate($this->Ingredients);
+
+        // $this->set(compact('ingredients'));
+        // $this->set('_serialize', ['ingredients']);
     }
 
     /**
@@ -51,19 +59,39 @@ class IngredientsController extends AppController
      */
     public function add()
     {
+        //will hold the new list of Ingredients after the new one has been created
+        $ingredients;
+
         $ingredient = $this->Ingredients->newEntity();
         if ($this->request->is('post')) {
             $ingredient = $this->Ingredients->patchEntity($ingredient, $this->request->data);
             if ($this->Ingredients->save($ingredient)) {
                 $this->Flash->success(__('The ingredient has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                $ingredient = $this->Ingredients->get($ingredient->id, [
+                    'contain' => ['Categories']
+                ]);
             } else {
                 $this->Flash->error(__('The ingredient could not be saved. Please, try again.'));
             }
         }
-        $categories = $this->Ingredients->Categories->find('list', ['limit' => 200]);
         $this->set(compact('ingredient', 'categories'));
         $this->set('_serialize', ['ingredient']);
+
+
+
+        // $ingredient = $this->Ingredients->newEntity();
+        // if ($this->request->is('post')) {
+        //     $ingredient = $this->Ingredients->patchEntity($ingredient, $this->request->data);
+        //     if ($this->Ingredients->save($ingredient)) {
+        //         $this->Flash->success(__('The ingredient has been saved.'));
+        //         return $this->redirect(['action' => 'index']);
+        //     } else {
+        //         $this->Flash->error(__('The ingredient could not be saved. Please, try again.'));
+        //     }
+        // }
+        // $categories = $this->Ingredients->Categories->find('list', ['limit' => 200]);
+        // $this->set(compact('ingredient', 'categories'));
+        // $this->set('_serialize', ['ingredient']);
     }
 
     /**

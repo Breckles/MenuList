@@ -18,7 +18,7 @@ class CategoriesFixture extends TestFixture
     // @codingStandardsIgnoreStart
     public $fields = [
         'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
-        'category' => ['type' => 'string', 'length' => 25, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
+        'name' => ['type' => 'string', 'length' => 25, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'created' => ['type' => 'datetime', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
         'modified' => ['type' => 'datetime', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
         '_constraints' => [
@@ -39,9 +39,9 @@ class CategoriesFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'category' => 'Lorem ipsum dolor sit a',
-            'created' => '2016-03-04 16:13:35',
-            'modified' => '2016-03-04 16:13:35'
+            'name' => 'Lorem ipsum dolor sit a',
+            'created' => '2016-04-12 13:47:33',
+            'modified' => '2016-04-12 13:47:33'
         ],
     ];
 }

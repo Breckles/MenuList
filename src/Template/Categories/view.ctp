@@ -13,8 +13,8 @@
     <h3><?= h($category->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th><?= __('Category') ?></th>
-            <td><?= h($category->category) ?></td>
+            <th><?= __('Name') ?></th>
+            <td><?= h($category->name) ?></td>
         </tr>
         <tr>
             <th><?= __('Id') ?></th>
@@ -37,6 +37,8 @@
                 <th><?= __('Id') ?></th>
                 <th><?= __('Name') ?></th>
                 <th><?= __('Category Id') ?></th>
+                <th><?= __('Information') ?></th>
+                <th><?= __('Image') ?></th>
                 <th><?= __('Created') ?></th>
                 <th><?= __('Modified') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
@@ -46,6 +48,8 @@
                 <td><?= h($ingredients->id) ?></td>
                 <td><?= h($ingredients->name) ?></td>
                 <td><?= h($ingredients->category_id) ?></td>
+                <td><?= h($ingredients->information) ?></td>
+                <td><?= h($ingredients->image) ?></td>
                 <td><?= h($ingredients->created) ?></td>
                 <td><?= h($ingredients->modified) ?></td>
                 <td class="actions">

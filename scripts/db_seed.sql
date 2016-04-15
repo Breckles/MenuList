@@ -18,22 +18,22 @@ INSERT INTO users (email, password)
 
 ########  categories seeds  ############
 
-INSERT INTO categories(category)  #id = 1
+INSERT INTO categories(name)  #id = 1
               VALUES('meat/poultry');
 
-INSERT INTO categories(category)  #id = 2
+INSERT INTO categories(name)  #id = 2
               VALUES('fruits/vegetables');
               
-INSERT INTO categories(category)  #id = 3
+INSERT INTO categories(name)  #id = 3
               VALUES('dairy');
               
-INSERT INTO categories(category)  #id = 4
+INSERT INTO categories(name)  #id = 4
               VALUES('bread/grains');
               
-INSERT INTO categories(category)  #id = 5
+INSERT INTO categories(name)  #id = 5
               VALUES('junk');
               
-INSERT INTO categories(category)  #id = 6
+INSERT INTO categories(name)  #id = 6
               VALUES('miscellaneous');
               
               
