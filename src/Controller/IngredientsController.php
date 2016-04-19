@@ -136,7 +136,7 @@ class IngredientsController extends AppController
         } else {
             $this->Flash->error(__('The ingredient could not be deleted. Please, try again.'));
         }
-        return $this->redirect(['action' => 'index']);
+        // return $this->redirect(['action' => 'index']);
     }
 
     public function sendImage($image_name = null)

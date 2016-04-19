@@ -352,4 +352,15 @@ INSERT INTO recipe_ingredients(recipe_id, ingredient_id, quantity, uom_id)  #id 
                       VALUES(6, 9, 2, 11);
 
 
+########  weekly_menus seeds  ######## 
+
+INSERT INTO weekly_menus(user_id, week_starting) #id = 1
+                      VALUES(1, '2016-03-27');
+
+INSERT INTO weekly_menus(user_id, week_starting) #id = 2
+                      VALUES(1, '2016-04-03');    
+
+INSERT INTO weekly_menus(user_id, week_starting) #id = 3
+                      VALUES(1, '2016-04-10');     
+
 COMMIT;

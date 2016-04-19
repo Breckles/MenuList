@@ -166,7 +166,7 @@ class RecipesController extends AppController
         } else {
             $this->Flash->error(__('The recipe could not be deleted. Please, try again.'));
         }
-        return $this->redirect(['action' => 'index']);
+        // return $this->redirect(['action' => 'index']);
     }
 
     public function sendImage($image_name = null)

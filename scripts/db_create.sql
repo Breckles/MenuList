@@ -88,7 +88,7 @@ CREATE TABLE recipe_ingredients(
 CREATE TABLE weekly_menus(
                id INT       AUTO_INCREMENT PRIMARY KEY  ,
           user_id INT                      NOT NULL     ,
-    week_starting DATETIME                              ,
+    week_starting DATE                                  ,
           created DATETIME                              ,
          modified DATETIME                              
 );
